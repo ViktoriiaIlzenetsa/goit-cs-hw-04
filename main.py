@@ -17,14 +17,14 @@ def worker(path, pattern):
 
 
 if __name__ == "__main__":
-    threads = [Thread(target=worker, args=(f"{i}", "clear life")) for i in range(3)]
+    threads = [Thread(target=worker, args=(f"{i}", "Significant")) for i in range(3)]
 
     timer = time()
     [thread.start() for thread in threads]
     [thread.join() for thread in threads]
     print(f'Elapsed time Threads: {round(time() - timer, 4)}')
 
-    processes = [Process(target=worker, args=(f"{i}", "clear life")) for i in range(3)]
+    processes = [Process(target=worker, args=(f"{i}", "Significant")) for i in range(3)]
 
     timer = time()
     [process.start() for process in processes]
