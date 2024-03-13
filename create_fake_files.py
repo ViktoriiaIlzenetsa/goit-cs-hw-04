@@ -6,8 +6,11 @@ from os import path, mkdir
 FILES_COUNT = 60
 
 for i in range(3):
-    parent_dir = path.relpath(f"{i}")
-    mkdir(parent_dir)
+    try:
+        parent_dir = path.relpath(f"{i}")
+        mkdir(parent_dir)
+    except FileExistsError:
+        continue
 
 
 fake = Faker()
